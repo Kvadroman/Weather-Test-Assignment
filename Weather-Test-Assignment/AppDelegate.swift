@@ -9,15 +9,17 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+    let container = AppDependencyContainer()
     var window: UIWindow?
+    private var appCoordinator: AppCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // MARK: Create appCoordinator
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UIViewController()
-        window?.backgroundColor = .blue
+        appCoordinator = container.makeCoordinator()
+        window?.rootViewController = appCoordinator.toPresentable()
         window?.makeKeyAndVisible()
+        appCoordinator.start(with: .main)
         return true
     }
 }
-
