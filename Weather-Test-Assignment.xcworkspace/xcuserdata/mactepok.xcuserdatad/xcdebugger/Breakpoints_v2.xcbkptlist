@@ -86,16 +86,128 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "62FAE6B3-4819-4C24-BB8B-2C3B2777FF9C"
+            uuid = "D07858CE-0A30-47DE-932E-4C51242093CB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather-Test-Assignment/Services/CLManager/CLManager.swift"
+            filePath = "Weather-Test-Assignment/Services/Networking/NetworkRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "checkStatus()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "performRequest(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D07858CE-0A30-47DE-932E-4C51242093CB - 50f5400d0b41e91a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;&#x3c4;_0_0, Alamofire.AFError&gt;) -&gt; () in Weather_Test_Assignment.NetworkRepository.performRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(_: Weather_Test_Assignment.WeatherAPI, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weather-Test-Assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mactepok/Documents/GitHub/Weather-Test-Assignment/Weather-Test-Assignment/Services/Networking/NetworkRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "736">
+               </Location>
+               <Location
+                  uuid = "D07858CE-0A30-47DE-932E-4C51242093CB - 50f5400d0b41e91a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;&#x3c4;_0_0, Alamofire.AFError&gt;) -&gt; () in Weather_Test_Assignment.NetworkRepository.performRequest&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(_: Weather_Test_Assignment.WeatherAPI, completion: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weather-Test-Assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mactepok/Documents/GitHub/Weather-Test-Assignment/Weather-Test-Assignment/Services/Networking/NetworkRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1068">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B84CAD62-2449-435B-BEF5-75A067484914"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather-Test-Assignment/Scenes/MainFlow/CurrentLocationFlow/CurrentLocationController/Cells/CurrentWeatherTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "configure(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B84CAD62-2449-435B-BEF5-75A067484914 - 30565ccd8562d9c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weather_Test_Assignment.CurrentWeatherTableViewCell.configure(with: Weather_Test_Assignment.ForeCastProtocol) -&gt; ()"
+                  moduleName = "Weather-Test-Assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mactepok/Documents/GitHub/Weather-Test-Assignment/Weather-Test-Assignment/Scenes/MainFlow/CurrentLocationFlow/CurrentLocationController/Cells/CurrentWeatherTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "2324">
+               </Location>
+               <Location
+                  uuid = "B84CAD62-2449-435B-BEF5-75A067484914 - 30565ccd8562d927"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weather_Test_Assignment.CurrentWeatherTableViewCell.configure(with: Weather_Test_Assignment.ForeCastProtocol) -&gt; ()"
+                  moduleName = "Weather-Test-Assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mactepok/Documents/GitHub/Weather-Test-Assignment/Weather-Test-Assignment/Scenes/MainFlow/CurrentLocationFlow/CurrentLocationController/Cells/CurrentWeatherTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "1232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96F20244-515D-4572-B3AA-09E0D48CEC98"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather-Test-Assignment/Scenes/MainFlow/CurrentLocationFlow/DetailsForecastController/ViewController/DetailsForecastViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "renderCell(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "46040103-924E-4A77-9327-7960CEDCB427"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather-Test-Assignment/Scenes/MainFlow/CurrentLocationFlow/CurrentLocationController/Cells/CurrentWeatherTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "configure(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

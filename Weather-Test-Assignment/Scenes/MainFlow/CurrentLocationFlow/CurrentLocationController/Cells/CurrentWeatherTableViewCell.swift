@@ -39,29 +39,21 @@ class CurrentWeatherTableViewCell: UITableViewCell {
         dateLabel.text = nil
     }
     
-    func configure(with model: AverageForecast) {
-        dateLabel.text = "Date:" + " " + model.date.convertToString()
-        temperatureCelsius.text = "Average temperature: \(model.averageTemperatureCelsius) ℃"
-        minTemperatureCelsius.text = "Min Temperature: \(model.minTemperatureCelsius) ℃"
-        maxTemperatureCelsius.text = "Max Temperature: \(model.maxTemperatureCelsius) ℃"
-        feelsLikeLabel.text = "Feels Like: \(model.averageFeelsLikeCelsius) ℃"
-        descriptionLabel.text = "Description:" + " " + (model.weatherDescription)
-        pressure.text = "Pressure: \(model.averagePressure) hPa"
-        windSpeed.text = "Wind Speed: \(model.averageWindSpeed) mph"
-        humidity.text = "Humidity: \(model.averageHumidity) %"
-        clouds.text = "Clouds: \(model.averageClouds) %"
-    }
-    
-    func configure(with model: Forecast) {
-        dateLabel.text = "Date:" + " " + model.date.convertToHours()
-        temperatureCelsius.text = "Temperature: \(model.temperatureCelsius) ℃"
-        minTemperatureCelsius.text = "Min Temperature: \(model.minTemperatureCelsius) ℃"
-        maxTemperatureCelsius.text = "Max Temperature: \(model.maxTemperatureCelsius) ℃"
-        feelsLikeLabel.text = "Feels Like: \(model.main.feelsLikeCelsius) ℃"
-        descriptionLabel.text = "Description:" + " " + (model.weather.first?.description.capitalized ?? "")
-        pressure.text = "Pressure: \(model.main.pressure) hPa"
-        windSpeed.text = "Wind Speed: \(model.wind.speed) mph"
-        humidity.text = "Humidity: \(model.main.humidity) %"
-        clouds.text = "Clouds: \(model.clouds.all) %"
+    func configure(with model: ForeCastProtocol) {
+        if let model = model as? Forecast {
+            dateLabel.text = "Date: \(Date(timeIntervalSince1970: TimeInterval(model.dt)).convertToHours())"
+        } else {
+            dateLabel.text = model.date
+        }
+        
+        temperatureCelsius.text = model.temperatureCelsius
+        minTemperatureCelsius.text = model.minTemperatureCelsius
+        maxTemperatureCelsius.text = model.maxTemperatureCelsius
+        feelsLikeLabel.text = model.feelsLikeCelsius
+        descriptionLabel.text = model.description
+        pressure.text = model.pressure
+        windSpeed.text = model.windSpeed
+        humidity.text = model.humidity
+        clouds.text = model.cloudsAll
     }
 }

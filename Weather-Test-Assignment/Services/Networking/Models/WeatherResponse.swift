@@ -8,6 +8,22 @@
 import Combine
 import Foundation
 
+struct WeatherResponseByCityName: Codable {
+    let coord: Coord
+    let weather: [Weather]
+    let base: String
+    let main: Main
+    let visibility: Int
+    let wind: Wind
+    let clouds: Clouds
+    let dt: Int
+    let sys: SysForCityName
+    let timezone: Int
+    let id: Int
+    let name: String
+    let cod: Int
+}
+
 struct WeatherResponse: Codable, Equatable, Hashable {
     let cod: String
     let message: Int
@@ -50,13 +66,14 @@ struct Coord: Codable {
 
 struct Forecast: Codable, Equatable, Hashable {
     static func == (lhs: Forecast, rhs: Forecast) -> Bool {
-        lhs.date == rhs.date
+        lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(visibility)
+        hasher.combine(id)
     }
     
+    let id = UUID()
     let dt: Int
     let main: Main
     let weather: [Weather]
@@ -67,23 +84,7 @@ struct Forecast: Codable, Equatable, Hashable {
     let rain: Rain?
     let sys: Sys
     let dtTxt: String
-
-    var date: Date {
-        return Date(timeIntervalSince1970: TimeInterval(dt))
-    }
     
-    var temperatureCelsius: Int {
-        Int(main.temp - 273.15)
-    }
-    
-    var minTemperatureCelsius: Int {
-        Int(main.tempMin - 273.15)
-    }
-    
-    var maxTemperatureCelsius: Int {
-        Int(main.tempMax - 273.15)
-    }
-
     enum CodingKeys: String, CodingKey {
         case dt, main, weather, clouds, wind, visibility, pop, rain, sys
         case dtTxt = "dt_txt"
@@ -96,15 +97,10 @@ struct Main: Codable {
     let tempMin: Double
     let tempMax: Double
     let pressure: Int
-    let seaLevel: Int
-    let grndLevel: Int
+    let seaLevel: Int?
+    let grndLevel: Int?
     let humidity: Int
-    let tempKf: Double
     
-    var feelsLikeCelsius: Int {
-        Int(feelsLike - 273.15)
-    }
-
     enum CodingKeys: String, CodingKey {
         case temp
         case feelsLike = "feels_like"
@@ -114,7 +110,6 @@ struct Main: Codable {
         case seaLevel = "sea_level"
         case grndLevel = "grnd_level"
         case humidity
-        case tempKf = "temp_kf"
     }
 }
 
@@ -139,10 +134,84 @@ struct Sys: Codable {
     let pod: String
 }
 
+struct SysForCityName: Codable {
+    let type: Int?
+    let id: Int?
+    let country: String
+    let sunrise: Int
+    let sunset: Int
+}
+
 struct Rain: Codable {
     let h3: Double
-
+    
     enum CodingKeys: String, CodingKey {
         case h3 = "3h"
+    }
+}
+
+extension Forecast: ForeCastProtocol {
+    var description: String {
+        "Description: \(weather.first?.description.capitalized ?? "")"
+    }
+    
+    var pressure: String {
+        "Pressure \(main.pressure) hPa"
+    }
+    
+    var windSpeed: String {
+        "Wind Speed: \(wind.speed) mph"
+    }
+    
+    var humidity: String {
+        "Humidity: \(main.humidity) %"
+    }
+    
+    var cloudsAll: String {
+        "Clouds: \(clouds.all) %"
+    }
+    var date: String {
+        return Date(timeIntervalSince1970: TimeInterval(dt)).convertToString()
+    }
+    
+    var temperatureCelsius: String {
+        main.temperatureCelsius
+    }
+    
+    var minTemperatureCelsius: String {
+        main.minTemperatureCelsius
+    }
+    
+    var maxTemperatureCelsius: String {
+        main.maxTemperatureCelsius
+    }
+    
+    var feelsLikeCelsius: String {
+        main.feelsLikeCelsius
+    }
+    
+    var dateAsDate: Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMMM yyyy"
+        return formatter.date(from: date)
+    }
+}
+
+extension Main {
+    var feelsLikeCelsius: String {
+        "Feels Like: \(Int(feelsLike - 273.15)) ℃"
+    }
+    
+    var temperatureCelsius: String {
+        "Temperature: \(Int(temp - 273.15)) ℃"
+    }
+    
+    var minTemperatureCelsius: String {
+        "Min Temperature: \(Int(tempMin - 273.15)) ℃"
+        
+    }
+    
+    var maxTemperatureCelsius: String {
+        "Max Temperature: \(Int(tempMax - 273.15)) ℃"
     }
 }

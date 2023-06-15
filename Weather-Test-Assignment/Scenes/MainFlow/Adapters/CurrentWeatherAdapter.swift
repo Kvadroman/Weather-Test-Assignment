@@ -113,7 +113,7 @@ final public class CurrentWeatherAdapter<Item: Hashable>: NSObject, UITableViewD
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let item = items[indexPath.row] as? AverageForecast else { return }
-        selectedItem.send(item.date)
+        selectedItem.send(item.dateObject)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

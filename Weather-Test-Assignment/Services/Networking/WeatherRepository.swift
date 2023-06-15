@@ -10,7 +10,7 @@ import UIKit
 
 protocol WeatherByCityRepositoryProtocol {
     var error: AnyPublisher<CLError?, Never> { get }
-    func fetchWeatherByCityName(with cityName: String, completion: @escaping (Result<WeatherResponse, Error>) -> Void)
+    func fetchWeatherByCityName(with cityName: String, completion: @escaping (Result<WeatherResponseByCityName, Error>) -> Void)
 }
 
 protocol WeatherRepositoryForecastProtocol {
@@ -18,10 +18,10 @@ protocol WeatherRepositoryForecastProtocol {
     func fetchWeather(completion: @escaping (Result<WeatherResponse, Error>) -> Void)
 }
 
-protocol WeatherRepositoryProtocol: WeatherRepositoryForecastProtocol,  WeatherByCityRepositoryProtocol{
+protocol WeatherRepositoryProtocol: WeatherRepositoryForecastProtocol, WeatherByCityRepositoryProtocol{
     var error: AnyPublisher<CLError?, Never> { get }
     func fetchWeather(completion: @escaping (Result<WeatherResponse, Error>) -> Void)
-    func fetchWeatherByCityName(with cityName: String, completion: @escaping (Result<WeatherResponse, Error>) -> Void)
+    func fetchWeatherByCityName(with cityName: String, completion: @escaping (Result<WeatherResponseByCityName, Error>) -> Void)
 }
 
 final class WeatherRepository: WeatherRepositoryProtocol {
@@ -48,8 +48,7 @@ final class WeatherRepository: WeatherRepositoryProtocol {
             .store(in: &cancellables)
     }
     
-    func fetchWeatherByCityName(with cityName: String, completion: @escaping (Result<WeatherResponse, Error>) -> Void) {
-        clManager.checkStatus()
+    func fetchWeatherByCityName(with cityName: String, completion: @escaping (Result<WeatherResponseByCityName, Error>) -> Void) {
         networkRepository.getWeatherByCityName(city: cityName, completion: completion)
     }
 }

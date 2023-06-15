@@ -53,6 +53,10 @@
 		001C43002A3A16A00027D3FD /* DetailsForecastViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C42FF2A3A16A00027D3FD /* DetailsForecastViewModeling.swift */; };
 		001C43022A3A16C30027D3FD /* DetailsForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C43012A3A16C30027D3FD /* DetailsForecastViewModel.swift */; };
 		001C43042A3A18A20027D3FD /* DetailsForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C43032A3A18A20027D3FD /* DetailsForecastViewController.swift */; };
+		001C43062A3B17680027D3FD /* InvalidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C43052A3B17680027D3FD /* InvalidationError.swift */; };
+		001C430A2A3B1A480027D3FD /* FindCityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C43092A3B1A480027D3FD /* FindCityLabel.swift */; };
+		001C430C2A3B1CB10027D3FD /* UIStackView+addArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C430B2A3B1CB10027D3FD /* UIStackView+addArrangedSubviews.swift */; };
+		001C430E2A3B224F0027D3FD /* ForeCastProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001C430D2A3B224F0027D3FD /* ForeCastProtocol.swift */; };
 		61C79120113AD40F05D664F2 /* Pods_Weather_Test_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6536D2F526CB5EE963027009 /* Pods_Weather_Test_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +109,10 @@
 		001C42FF2A3A16A00027D3FD /* DetailsForecastViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsForecastViewModeling.swift; sourceTree = "<group>"; };
 		001C43012A3A16C30027D3FD /* DetailsForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsForecastViewModel.swift; sourceTree = "<group>"; };
 		001C43032A3A18A20027D3FD /* DetailsForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsForecastViewController.swift; sourceTree = "<group>"; };
+		001C43052A3B17680027D3FD /* InvalidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidationError.swift; sourceTree = "<group>"; };
+		001C43092A3B1A480027D3FD /* FindCityLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityLabel.swift; sourceTree = "<group>"; };
+		001C430B2A3B1CB10027D3FD /* UIStackView+addArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+addArrangedSubviews.swift"; sourceTree = "<group>"; };
+		001C430D2A3B224F0027D3FD /* ForeCastProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeCastProtocol.swift; sourceTree = "<group>"; };
 		6536D2F526CB5EE963027009 /* Pods_Weather_Test_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_Test_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F2DDCD93CEDDD7156B97C35 /* Pods-Weather-Test-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather-Test-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Weather-Test-Assignment/Pods-Weather-Test-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		AB0E2C54AEFE110D3E119E2F /* Pods-Weather-Test-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather-Test-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Weather-Test-Assignment/Pods-Weather-Test-Assignment.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 		001C42792A3853540027D3FD /* Weather-Test-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				001C43082A3B1A2B0027D3FD /* AppStyle */,
 				001C427A2A3853540027D3FD /* AppDelegate.swift */,
 				001C42AD2A3865F90027D3FD /* AppCoordinator.swift */,
 				001C42A72A3865910027D3FD /* Patterns */,
@@ -183,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				001C42952A385F600027D3FD /* WeatherResponse.swift */,
+				001C430D2A3B224F0027D3FD /* ForeCastProtocol.swift */,
 				001C42F92A3A04EC0027D3FD /* AverageForecast.swift */,
 				001C42E22A39BED30027D3FD /* RequestModels */,
 			);
@@ -366,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				001C42DB2A39A07E0027D3FD /* CLError.swift */,
+				001C43052A3B17680027D3FD /* InvalidationError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 			children = (
 				001C42DE2A39A6FB0027D3FD /* UIViewController+Toast.swift */,
 				001C42F42A39DEB10027D3FD /* UIDate+String.swift */,
+				001C430B2A3B1CB10027D3FD /* UIStackView+addArrangedSubviews.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -456,6 +468,14 @@
 				001C43012A3A16C30027D3FD /* DetailsForecastViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		001C43082A3B1A2B0027D3FD /* AppStyle */ = {
+			isa = PBXGroup;
+			children = (
+				001C43092A3B1A480027D3FD /* FindCityLabel.swift */,
+			);
+			path = AppStyle;
 			sourceTree = "<group>";
 		};
 		6F7D0560370123FACCA0E45D /* Frameworks */ = {
@@ -608,17 +628,20 @@
 				001C42E92A39C7150027D3FD /* HTTPMethod.swift in Sources */,
 				001C43002A3A16A00027D3FD /* DetailsForecastViewModeling.swift in Sources */,
 				001C42C92A3875260027D3FD /* CurrentLocationViewModeling.swift in Sources */,
+				001C43062A3B17680027D3FD /* InvalidationError.swift in Sources */,
 				001C42AA2A3865A50027D3FD /* Controller.swift in Sources */,
 				001C42932A385CD80027D3FD /* NetworkConstant.swift in Sources */,
 				001C42B62A3869240027D3FD /* CurrentLocationCoordinator.swift in Sources */,
 				001C42F22A39D6700027D3FD /* CurrentWeatherTableViewCell.swift in Sources */,
 				001C43022A3A16C30027D3FD /* DetailsForecastViewModel.swift in Sources */,
 				001C42A62A3865780027D3FD /* WindowsRouter.swift in Sources */,
+				001C430E2A3B224F0027D3FD /* ForeCastProtocol.swift in Sources */,
 				001C42AE2A3865F90027D3FD /* AppCoordinator.swift in Sources */,
 				001C42DF2A39A6FB0027D3FD /* UIViewController+Toast.swift in Sources */,
 				001C42AC2A3865B80027D3FD /* ViewModel.swift in Sources */,
 				001C427B2A3853540027D3FD /* AppDelegate.swift in Sources */,
 				001C42EB2A39C7450027D3FD /* WeatherAPI.swift in Sources */,
+				001C430A2A3B1A480027D3FD /* FindCityLabel.swift in Sources */,
 				001C42C12A386D8C0027D3FD /* MainTabBarViewModel.swift in Sources */,
 				001C42B82A3869500027D3FD /* FindCityCoordinator.swift in Sources */,
 				001C42E42A39BEF80027D3FD /* ForeCastModel.swift in Sources */,
@@ -632,6 +655,7 @@
 				001C429F2A3865160027D3FD /* WindowCoordinator.swift in Sources */,
 				001C42CB2A3875450027D3FD /* CurrentLocationViewModel.swift in Sources */,
 				001C429D2A3864E70027D3FD /* Presentable.swift in Sources */,
+				001C430C2A3B1CB10027D3FD /* UIStackView+addArrangedSubviews.swift in Sources */,
 				001C42A12A3865300027D3FD /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

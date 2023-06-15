@@ -7,19 +7,20 @@
 
 import Foundation
 
-struct AverageForecast: Hashable {
-    let date: Date
-    let averageTemperatureCelsius: Double
-    let minTemperatureCelsius: Double
-    let maxTemperatureCelsius: Double
-    let averageFeelsLikeCelsius: Double
-    let averagePressure: Double
-    let averageWindSpeed: Double
-    let averageHumidity: Int
-    let averageClouds: Int
-    let weatherDescription: String
+struct AverageForecast: Hashable, ForeCastProtocol {
+    var dateObject: Date
+    var date: String
+    var temperatureCelsius: String
+    var minTemperatureCelsius: String
+    var maxTemperatureCelsius: String
+    var feelsLikeCelsius: String
+    var description: String
+    var pressure: String
+    var windSpeed: String
+    var humidity: String
+    var cloudsAll: String
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(date)
+        hasher.combine(dateObject)
     }
 }

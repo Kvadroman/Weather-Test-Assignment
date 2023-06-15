@@ -9,7 +9,7 @@ import Alamofire
 import Foundation
 
 protocol NetworkByCityNameRepositoryProtocol {
-    func getWeatherByCityName(city: String, completion: @escaping ((Result<WeatherResponse, Error>) -> Void))
+    func getWeatherByCityName(city: String, completion: @escaping ((Result<WeatherResponseByCityName, Error>) -> Void))
 }
 
 protocol NetworkRepositoryForecastProtocol {
@@ -18,7 +18,7 @@ protocol NetworkRepositoryForecastProtocol {
 
 protocol NetworkRepositoryProtocol: NetworkRepositoryForecastProtocol, NetworkByCityNameRepositoryProtocol {
     func getWeatherForecast(with model: ForeCastModel, completion: @escaping ((Result<WeatherResponse, Error>) -> Void))
-    func getWeatherByCityName(city: String, completion: @escaping ((Result<WeatherResponse, Error>) -> Void))
+    func getWeatherByCityName(city: String, completion: @escaping ((Result<WeatherResponseByCityName, Error>) -> Void))
 }
 
 final class NetworkRepository: NetworkRepositoryProtocol {
@@ -27,7 +27,7 @@ final class NetworkRepository: NetworkRepositoryProtocol {
         performRequest(.getWeather(model: model), completion: completion)
     }
     
-    func getWeatherByCityName(city: String, completion: @escaping ((Result<WeatherResponse, Error>) -> Void)) {
+    func getWeatherByCityName(city: String, completion: @escaping ((Result<WeatherResponseByCityName, Error>) -> Void)) {
         performRequest(.getWeatherByCityName(city: city), completion: completion)
     }
     
@@ -38,7 +38,11 @@ final class NetworkRepository: NetworkRepositoryProtocol {
             case .success(let data):
                 completion(.success(data))
             case .failure(let error):
-                completion(.failure(error))
+                guard let error = error.asAFError, error.responseCode == 404 else {
+                    completion(.failure(error))
+                    return
+                }
+                completion(.failure(InvalidationError.invalidCityName))
             }
         }
     }

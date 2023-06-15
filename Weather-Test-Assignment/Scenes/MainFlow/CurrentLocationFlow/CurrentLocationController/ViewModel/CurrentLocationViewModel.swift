@@ -72,7 +72,10 @@ final class CurrentLocationViewModel: CurrentLocationViewModeling {
             .receive(on: DispatchQueue.main)
             .compactMap { $0 }
             .sink { [weak self] selectedDate in
-                self?.hourlyForecast = self?.weatherResponse?.list.filter { $0.date.isSameDay(as: selectedDate) }
+                self?.hourlyForecast = self?.weatherResponse?.list.filter { forecast in
+                    guard let date = forecast.dateAsDate else { return false }
+                    return date.isSameDay(as: selectedDate)
+                }
             }
             .store(in: &cancellables)
         
