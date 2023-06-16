@@ -189,10 +189,10 @@
             filePath = "Weather-Test-Assignment/Scenes/MainFlow/CurrentLocationFlow/DetailsForecastController/ViewController/DetailsForecastViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "renderCell(_:_:)"
-            landmarkType = "7">
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "DetailsForecastViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

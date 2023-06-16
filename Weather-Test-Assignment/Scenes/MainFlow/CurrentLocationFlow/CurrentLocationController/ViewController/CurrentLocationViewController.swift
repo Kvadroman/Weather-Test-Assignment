@@ -7,6 +7,7 @@
 
 import Combine
 import CombineCocoa
+import SnapKit
 import UIKit
 
 class CurrentLocationViewController<T: CurrentLocationViewModeling>: UIViewController, Controller {
@@ -88,12 +89,9 @@ class CurrentLocationViewController<T: CurrentLocationViewModeling>: UIViewContr
     
     private func setupConstraints() {
         view.addSubview(currentWeatherTableView)
-        NSLayoutConstraint.activate([
-            currentWeatherTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            currentWeatherTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            currentWeatherTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            currentWeatherTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        ])
+        currentWeatherTableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     private func setupNavController() {

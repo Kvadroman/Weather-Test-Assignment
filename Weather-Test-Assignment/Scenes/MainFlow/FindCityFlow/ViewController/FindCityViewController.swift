@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SnapKit
 import UIKit
 
 class FindCityViewController<T: FindCityViewModeling>: UIViewController, Controller, UISearchBarDelegate {
@@ -116,12 +117,9 @@ class FindCityViewController<T: FindCityViewModeling>: UIViewController, Control
             cloudsLabel,
             descriptionLabel,
         ])
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-        ])
+        stackView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(16)
+        }
     }
     
     private func setupSearchController() {

@@ -9,5 +9,6 @@ target 'Weather-Test-Assignment' do
 pod 'Swinject'
 pod 'CombineCocoa'
 pod 'Alamofire'
+pod 'SnapKit'
 
 end

@@ -7,6 +7,7 @@
 
 import Combine
 import CombineCocoa
+import SnapKit
 import UIKit
 
 class DetailsForecastViewController<T: DetailsForecastViewModeling>: UIViewController, Controller {
@@ -66,12 +67,9 @@ class DetailsForecastViewController<T: DetailsForecastViewModeling>: UIViewContr
     
     private func setupConstraints() {
         view.addSubview(detailsForecastTableView)
-        NSLayoutConstraint.activate([
-            detailsForecastTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            detailsForecastTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            detailsForecastTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            detailsForecastTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        ])
+        detailsForecastTableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     private func setupViews() {
