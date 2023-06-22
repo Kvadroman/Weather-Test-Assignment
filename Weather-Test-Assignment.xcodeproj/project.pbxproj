@@ -151,7 +151,6 @@
 		001C42792A3853540027D3FD /* Weather-Test-Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				001C43082A3B1A2B0027D3FD /* AppStyle */,
 				001C427A2A3853540027D3FD /* AppDelegate.swift */,
 				001C42AD2A3865F90027D3FD /* AppCoordinator.swift */,
 				001C42A72A3865910027D3FD /* Patterns */,
@@ -161,6 +160,7 @@
 				001C42AF2A38672E0027D3FD /* Scenes */,
 				001C42DD2A39A6E90027D3FD /* Extensions */,
 				001C42DA2A39A06D0027D3FD /* Errors */,
+				001C43082A3B1A2B0027D3FD /* AppStyle */,
 				001C42832A3853550027D3FD /* Assets.xcassets */,
 				001C42852A3853550027D3FD /* LaunchScreen.storyboard */,
 				001C42882A3853550027D3FD /* Info.plist */,
